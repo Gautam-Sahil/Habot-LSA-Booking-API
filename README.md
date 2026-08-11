@@ -79,6 +79,24 @@ The platform combines Django REST Framework APIs with optimized database operati
 
 ---
 
+## 💻 Tech Stack Deep Dive
+
+### 1. Application Layer
+- **Framework:** Python 3.10+, Django 6.1, Django REST Framework 3.18
+- **Database:** SQLite with Django ORM for development and prototype persistence
+- **Data Integrity:** Native UUIDs, `CheckConstraint`, and Django `F()` expressions
+- **API Architecture:** RESTful API endpoints with Django REST Framework
+- **Query Optimization:** Django ORM with `prefetch_related()` to eliminate N+1 query problems
+- **External Integrations:** Python `requests` library with strict timeouts and exception handling
+
+### 2. DevOps & Infrastructure Layer
+- **Testing Engine:** Pytest, Pytest-Django (5 highly-targeted edge-case test suites)
+- **CI/CD Pipeline:** GitHub Actions for automated testing on every push and pull request to the `main` branch
+- **Concurrency Control:** Database row-level locking to prevent race conditions during concurrent booking updates
+- **Version Control:** Strict Git methodology with `.gitignore` to isolate development artifacts from production files
+
+---
+
 ## ⚙️ Installation & Development
 
 To test the LSA Booking system locally:
